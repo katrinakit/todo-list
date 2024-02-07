@@ -5,48 +5,60 @@
 # Lists https://www.w3schools.com/python/python_lists.asp
 # 
 
-def add(list, item):
-  # https://www.w3schools.com/python/python_lists_add.asp
+def add(shopping_list, item):
+  if (len(shopping_list) >=100):
+   print("nemelo, nekadam produktam nav tik garšs vārds")
+  else:
+   # https://www.w3schools.com/python/python_lists_add.asp
+   shopping_list.append(item)
   pass
 
 
-def remove(list, index):
+def remove(shopping_list, index):
   # https://www.w3schools.com/python/python_lists_remove.asp
+  shopping_list.pop(index)
   pass
 
 
-def clear(list):
+def clear(shopping_list):
   # https://www.w3schools.com/python/python_lists_remove.asp
+  shopping_list.clear()
   pass
 
 
-def print_list(list):
+def print_list(shopping_list):
   # https://www.w3schools.com/python/python_lists_loop.asp
+  print(shopping_list)
   pass
 
 
-def show(list):
+def show(shopping_list):
   # https://www.w3schools.com/python/python_lists_access.asp
+  print(shopping_list[index])
   pass
 
-list = []
-print("List is empty now, what you want to do?")
+shopping_list = []
+print(shopping_list)
+print("pievieno dažus poduktus kuru mums vajag nopirkt lai izveidotu šokolādes kūku")
 while True:
-  choice = int(input("1. Add\n2. Remove\n3. Clear\n4. Print list\n5. Show item by index"))
+  choice = int(input("1. Add\n2. Remove\n3. Clear\n4. Print list\n5. Show item by index\n6. Exit\n"))
   if choice == 1:
-    item = input("What you want to add?\n")
-    add(list, item)
-    print_list(list)
+    item = input("ko tu gribi pievienot?\n")
+    add(shopping_list, item) 
+    print(shopping_list)
   elif choice == 2:
-    index = int(input("What you want to remove?\n"))
-    remove(list, index)
-    print_list(list)
+    index = int(input("ko tu gribi noņemt?\n"))
+    remove(shopping_list, index)
+    print_list(shopping_list)
   elif choice == 3:
-    clear(list)
-    print_list(list)
+    clear(shopping_list)
+    print_list("saraksts ir tukšs")
   elif choice == 4:
-    print_list(list)
+    print(shopping_list)
   elif choice == 5:
-    show(list)
+    show(shopping_list)
+  elif choice == 6:
+    print("you couldnt afford a chocolate cake? ur dog will starve without it, oh nvm dogs cant eat chocolate...GOOD JOB YOU SAVED UR DOG")
+    break
   else:
     print("Invalid input")
